@@ -5,18 +5,10 @@ using UnityEngine;
 
 public enum Sound {
 	NONE,
-	CAVE_MUSIC,
-	BATTLE_MUSIC,
-	HEAL_CHANNEL,
-	CHEST_OPEN,
-	COLLECT_COIN,
-	ENEMY_DEATH,
+	BASIC_BACKGROUND_MUSIC,
 	PLAYER_FOOTSTEPS,
-	PLAYER_HIT,
 	PLAYER_JUMP,
-	PLAYER_LAND,
-	PLAYER_DAMAGED,
-	PLAYER_SWORDSWING
+	PLAYER_LAND
 }
 
 public static class SoundUtility {
@@ -24,8 +16,6 @@ public static class SoundUtility {
 		switch(s) {
 			case Sound.PLAYER_FOOTSTEPS:
 				return 0.4f;
-			case Sound.COLLECT_COIN:
-				return 0.1f;
 			default:
 				return 0;
 		}
