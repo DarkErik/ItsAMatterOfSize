@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/// <summary>
+/// An enum, which defines the Sound to play
+/// </summary>
 public enum Sound {
 	NONE,
 	BASIC_BACKGROUND_MUSIC,
@@ -22,8 +25,16 @@ public static class SoundUtility {
 	}
 }
 
+/// <summary>
+/// [Singelton (instance)]
+/// Class which manages Sound and Audioplayback
+/// Use static functions
+/// </summary>
 public class SoundManager : MonoBehaviour
 {
+	/// <summary>
+	/// Singelton
+	/// </summary>
 	public static SoundManager instance;
 
 	[SerializeField] private SoundSystemDictionaryEntry[] sounds;
@@ -41,10 +52,21 @@ public class SoundManager : MonoBehaviour
 	}
 
 
+	/// <summary>
+	/// Changes the Background music (looping)
+	/// </summary>
+	/// <param name="sound">The Sound to Play</param>
+	/// <param name="transitionTime">(Optional = 0) time of the Backgroundmusic Transition (0 = instant)</param>
+	/// <param name="overrideOld">(Optional = false) if true: forces a song to start over (even if its already playing)</param>
 	public static void ChangeBackgrundMusic(Sound sound, float transitionTime = 0f, bool overrideOld = false) {
 		instance._ChangeBackgrundMusic(sound, transitionTime, overrideOld);
 	}
 
+	/// <summary>
+	/// Plays a soundclip (once)
+	/// </summary>
+	/// <param name="sound">The sound to play</param>
+	/// <param name="randomPitch"> if true randomizes the pitch for some variation</param>
 	public static void PlaySound(Sound sound, bool randomPitch) {
 		instance._PlaySound(sound, randomPitch);
 	}

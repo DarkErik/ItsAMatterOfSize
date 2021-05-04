@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3246011219825364330}
   - component: {fileID: 3246011219825364333}
   - component: {fileID: 3246011219825364332}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RunningSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4816,7 +4816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3246011219924564094}
   - component: {fileID: 3246011219924564095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerSpriteBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4898,7 +4898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246011220221452426}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246011220511181570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CollisionChecks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +4960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246011220818079692}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4994,7 +4994,7 @@ GameObject:
   - component: {fileID: 3246011221003511070}
   - component: {fileID: 3246011221003511057}
   - component: {fileID: 3246011221003511071}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

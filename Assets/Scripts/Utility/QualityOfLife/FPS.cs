@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
+/// <summary>
+/// Debugs FPS on the screen
+/// </summary>
 public class FPS : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI txt;

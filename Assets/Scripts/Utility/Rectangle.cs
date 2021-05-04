@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// A welldefined Rectangle
+/// </summary>
 [System.Serializable]
 public class Rectangle {
 	public int x;

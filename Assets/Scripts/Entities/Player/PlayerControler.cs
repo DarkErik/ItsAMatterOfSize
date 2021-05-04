@@ -1,29 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// [Singelton ("instance")]
+/// The script, which controls the player movement
+/// </summary>
 public class PlayerControler : MonoBehaviour
 {
+	/// <summary>
+	/// Singelton
+	/// </summary>
 	public static PlayerControler instance;
 
 	public float moveSpeed = 10f;
 	public float jumpForce = 8f;
+	/// <summary>
+	/// The wall down sliding speed
+	/// </summary>
 	public float wallSlidingSpeed = 5f;
+	/// <summary>
+	/// The force, which will be applied midair, when a movement input is set
+	/// </summary>
 	public float moveForceInAir = 1000;
+	/// <summary>
+	/// The airspeed cap
+	/// </summary>
 	public Vector2 maxAirSpeed = new Vector2(6, 8);
+	/// <summary>
+	/// multiplier, when you turn midair
+	/// </summary>
 	public float inAirTurnAroundMultiplier = 1.5f;
 	public float airDragMultiplicator = 0.1f;
+	/// <summary>
+	/// How much your Jumpvelocity (y) is reduced, when you release the Jump key, before the pivot of the jump
+	/// </summary>
+	[Range(0, 1)]
 	public float jumpHeightCutOffMultiplier = 0.5f;
+	/// <summary>
+	/// The force of a Walljump (in the wallJumpDir)
+	/// </summary>
 	public float wallJumpForce = 500f;
 
+	/// <summary>
+	/// The amount of time, your input will be blocked after a walljump
+	/// </summary>
 	public float controlBlockDelayWallJump = 0.2f;
+
 	public float groundCheckRadius = 0.5f;
 	public float wallCheckDistance = 0.5f;
 	public int amountOfJumps = 1;
 	public LayerMask whatIsGround;
-
+	/// <summary>
+	/// This Transform, will be fliped, whenever a you switch ur looking-direction
+	/// </summary>
 	public Transform directionFlipTransform;
 
+	/// <summary>
+	/// The Direction of the walljump (assuming you look to the right handside)
+	/// </summary>
 	public Vector2 wallJumpDir;
 
 	private int amountOfJumpsLeft;
@@ -74,12 +108,17 @@ public class PlayerControler : MonoBehaviour
 		CheckSurroundings();
 		ResetButtons();
 	}
-
+	/// <summary>
+	/// Resets the intern Buttons
+	/// </summary>
 	private void ResetButtons() {
 		jumpPressed = false;
 		jumpNowReleased = false;
 	}
 
+	/// <summary>
+	/// Fetches the Inputs from the input-system
+	/// </summary>
 	private void GetInputs() {
 		horizontalInput = Input.GetAxis(horizontalMovementAxis);
 		verticalInput = Input.GetAxis(verticalMovementAxis);
@@ -90,6 +129,9 @@ public class PlayerControler : MonoBehaviour
 			jumpNowReleased = Input.GetButtonUp(jumpButton);
 	}
 
+	/// <summary>
+	/// Handles ground/wall/air movement
+	/// </summary>
 	private void Move() {
 
 
@@ -241,6 +283,10 @@ public class PlayerControler : MonoBehaviour
 
 		Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, 0));
 	}
+
+	/// <summary>
+	/// Shuts down the behaivour, until it will be woken up (WakeUp)
+	/// </summary>
 	public static void Shutdown() {
 		_Shutdown();
 	}
@@ -251,10 +297,17 @@ public class PlayerControler : MonoBehaviour
 
 	}
 
+	/// <summary>
+	/// Reactivates the behaivour after a call of Shutdown
+	/// </summary>
 	public static void WakeUp() {
 		instance.enabled = true;
 	}
 
+	/// <summary>
+	/// Shuts down the Player for a certain time (after that reactivating it automaticly)
+	/// </summary>
+	/// <param name="time">The sleeping time</param>
 	public static void Shutdown(float time) {
 		instance.StartCoroutine(EnablePlayerControllerAfterTime(time));
 		_Shutdown();
@@ -266,7 +319,10 @@ public class PlayerControler : MonoBehaviour
 		instance.enabled = true;
 	}
 
-
+	/// <summary>
+	/// Return whether the player is standing on the ground currently
+	/// </summary>
+	/// <returns>True, when the player is standing on the ground, otherwise false</returns>
 	public bool IsGrounded() {
 		return isGrounded;
 	}
