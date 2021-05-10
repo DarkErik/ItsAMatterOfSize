@@ -24,9 +24,9 @@ public class Entity : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 
 		if (isEnemy) {
-			this.gameObject.layer = LayerMask.NameToLayer("Player");
-		} else {
 			this.gameObject.layer = LayerMask.NameToLayer("Enemy");
+		} else {
+			this.gameObject.layer = LayerMask.NameToLayer("Player");
 		}
 	}
 
@@ -55,8 +55,11 @@ public class Entity : MonoBehaviour
 		if (hp <= 0) {
 			Kill();
 		} else {
-			if (knockbackResistance < 1)
+			if (knockbackResistance < 1) {
+				if (IsPlayer()) PlayerControler.Shutdown(0.1f);
+
 				rb.velocity = knockback * (1 - knockbackResistance);
+			}
 		}
 	}
 
@@ -68,6 +71,13 @@ public class Entity : MonoBehaviour
 		return currentInvincibilityTime > 0;
 	}
 
+	/// <summary>
+	/// Returns whether this entity is the Player
+	/// </summary>
+	/// <returns></returns>
+	public bool IsPlayer() {
+		return PlayerControler.instance.gameObject == this.gameObject;
+	}
 
 	/// <summary>
 	/// Kills the Entity!
@@ -84,7 +94,9 @@ public class Entity : MonoBehaviour
 	/// <param name="knockbackStrenght">The power of the knockback</param>
 	/// <returns></returns>
 	public Vector3 GetKnockbackOutOfPosition(GameObject attacker, float knockbackStrenght) {
-		return (attacker.transform.position - this.transform.position).normalized * knockbackStrenght;
+		Vector3 dir = (this.transform.position - attacker.transform.position).normalized;
+		dir.y = 1;
+		return dir * knockbackStrenght;
 	}
 
 }

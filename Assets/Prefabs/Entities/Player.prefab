@@ -5217,6 +5217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3246011221003511056}
   - component: {fileID: 3246011221003511059}
+  - component: {fileID: 6587061081482435012}
   - component: {fileID: 3246011221003511070}
   - component: {fileID: 4945809843429388576}
   - component: {fileID: 3246011221003511071}
@@ -5279,6 +5280,22 @@ MonoBehaviour:
   groundCheck: {fileID: 3246011220221452426}
   wallCheck: {fileID: 3246011220818079692}
   partikelSystem: {fileID: 3246011219825364333}
+--- !u!114 &6587061081482435012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246011221003511058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60bd4664676879439813216718e41a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  isEnemy: 0
+  invincibilityTimeAfterHit: 0
+  knockbackResistance: 0.5
 --- !u!50 &3246011221003511070
 Rigidbody2D:
   serializedVersion: 4

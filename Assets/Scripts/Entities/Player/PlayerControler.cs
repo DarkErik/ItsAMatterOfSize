@@ -89,11 +89,11 @@ public class PlayerControler : MonoBehaviour
 
 	private void Awake() {
 		instance = this;
+		body = GetComponent<Rigidbody2D>();
 	}
 
 	private void Start()
     {
-		body = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 		amountOfJumpsLeft = amountOfJumps;
 		wallJumpDir.Normalize();
