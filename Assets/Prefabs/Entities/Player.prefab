@@ -5221,6 +5221,7 @@ GameObject:
   - component: {fileID: 3246011221003511070}
   - component: {fileID: 4945809843429388576}
   - component: {fileID: 3246011221003511071}
+  - component: {fileID: 14256739265521597}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -5352,6 +5353,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &14256739265521597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3246011221003511058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f835fb7229f954c4c8cdf200b95d2fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 5209672321969496333, guid: d865a8368f4eeb544b01dd588483b249, type: 3}
+  magazineSize: 10
+  reloadTime: 5
+  shotsPerSecound: 2
+  shotOrigin: {fileID: 7493675183027809172}
+  isEnemy: 0
 --- !u!1 &5559578998654453457
 GameObject:
   m_ObjectHideFlags: 0

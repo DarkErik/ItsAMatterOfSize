@@ -99,5 +99,9 @@ public class Entity : MonoBehaviour
 		return dir * knockbackStrenght;
 	}
 
+	public bool IsEnemy() {
+		return isEnemy;
+	}
+
 }
 
