@@ -5365,7 +5365,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f835fb7229f954c4c8cdf200b95d2fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sample: {fileID: 5209672321969496333, guid: d865a8368f4eeb544b01dd588483b249, type: 3}
+  shot: {fileID: 5209672321969496333, guid: d865a8368f4eeb544b01dd588483b249, type: 3}
+  magazineSize: 10
+  reloadTime: 5
+  shotsPerSecound: 2
+  shotOrigin: {fileID: 7493675183027809172}
+  isEnemy: 0
 --- !u!1 &5559578998654453457
 GameObject:
   m_ObjectHideFlags: 0
