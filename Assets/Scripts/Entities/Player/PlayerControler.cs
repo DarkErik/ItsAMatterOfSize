@@ -34,6 +34,10 @@ public class PlayerControler : MonoBehaviour
 	/// </summary>
 	public float dashDuration = 0.25f;
 
+	public float dashEyeCandyPerSecond = 4;
+	public Color dashEyeCandyColor;
+	public float dashEyeCandyLifeTime = 0.2f;
+	public Transform dashEyeCandyCopyBase;
 
 
 	/// <summary>
@@ -98,6 +102,7 @@ public class PlayerControler : MonoBehaviour
 	private Animator animator;
 
 	private float dashEndTime = 0f;
+	private float nextDashEyeCandy = 0f;
 	private bool canDash = true;
 	private Vector3 normalizedDashDirection = default;
 	private float gravityValueStorageDuringDash;
@@ -159,6 +164,17 @@ public class PlayerControler : MonoBehaviour
 				normalizedDashDirection.Normalize();
 			}
 
+
+		}
+
+		if (isDashing && nextDashEyeCandy <= Time.time) {
+			GameObject eyeCandy = Instantiate(dashEyeCandyCopyBase.gameObject, dashEyeCandyCopyBase.position, dashEyeCandyCopyBase.rotation);
+			eyeCandy.transform.localScale = dashEyeCandyCopyBase.lossyScale;
+			foreach(SpriteRenderer renderer in eyeCandy.GetComponentsInChildren<SpriteRenderer>()) {
+				renderer.color = dashEyeCandyColor;
+			}
+			Destroy(eyeCandy, dashEyeCandyLifeTime);
+			nextDashEyeCandy = Time.time + (1 / dashEyeCandyPerSecond);
 
 		}
 

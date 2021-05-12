@@ -5266,6 +5266,10 @@ MonoBehaviour:
   moveForceInAir: 2000
   dashVelocity: 1000
   dashDuration: 0.15
+  dashEyeCandyPerSecond: 100
+  dashEyeCandyColor: {r: 1, g: 1, b: 1, a: 0.48235294}
+  dashEyeCandyLifeTime: 0.2
+  dashEyeCandyCopyBase: {fileID: 3246011219924564094}
   maxAirSpeed: {x: 6, y: 15}
   inAirTurnAroundMultiplier: 1.5
   airDragMultiplicator: 5
