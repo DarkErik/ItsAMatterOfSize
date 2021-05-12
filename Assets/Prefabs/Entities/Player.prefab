@@ -5038,7 +5038,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5264,6 +5264,8 @@ MonoBehaviour:
   jumpForce: 12
   wallSlidingSpeed: 1.75
   moveForceInAir: 2000
+  dashVelocity: 1000
+  dashDuration: 0.15
   maxAirSpeed: {x: 6, y: 15}
   inAirTurnAroundMultiplier: 1.5
   airDragMultiplicator: 5
@@ -5293,7 +5295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60bd4664676879439813216718e41a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 10000
   isEnemy: 0
   invincibilityTimeAfterHit: 0
   knockbackResistance: 0.5

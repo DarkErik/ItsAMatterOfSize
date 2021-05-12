@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
@@ -22,6 +23,19 @@ public class PlayerControler : MonoBehaviour
 	/// The force, which will be applied midair, when a movement input is set
 	/// </summary>
 	public float moveForceInAir = 1000;
+
+	/// <summary>
+	/// Velocity of a Dash
+	/// </summary>
+	public float dashVelocity = 100f;
+
+	/// <summary>
+	/// The time the Dash will need to get from start to end point
+	/// </summary>
+	public float dashDuration = 0.25f;
+
+
+
 	/// <summary>
 	/// The airspeed cap
 	/// </summary>
@@ -40,6 +54,7 @@ public class PlayerControler : MonoBehaviour
 	/// The force of a Walljump (in the wallJumpDir)
 	/// </summary>
 	public float wallJumpForce = 500f;
+
 
 	/// <summary>
 	/// The amount of time, your input will be blocked after a walljump
@@ -63,13 +78,14 @@ public class PlayerControler : MonoBehaviour
 	private int amountOfJumpsLeft;
 
 	private bool facingRight = true;
-	private bool jumpPressed = false, jumpNowReleased = false;
+	private bool jumpPressed = false, jumpNowReleased = false, dashPressed = false;
 	private bool isWalking = false;
 	private bool isLookingUp = false;
 	private bool isDucking = false;
 	private bool isGrounded = false, canJump = false;
 	private bool isTouchingWall = false;
 	private bool isWallSliding = false;
+	private bool isDashing = false;
 
 	private float horizontalInput = 0;
 	private float verticalInput = 0;
@@ -81,9 +97,15 @@ public class PlayerControler : MonoBehaviour
 	private Rigidbody2D body;
 	private Animator animator;
 
+	private float dashEndTime = 0f;
+	private bool canDash = true;
+	private Vector3 normalizedDashDirection = default;
+	private float gravityValueStorageDuringDash;
+
 	[SerializeField] private ParticleSystem partikelSystem;
 
 	private string jumpButton = "Jump";
+	private string dashButton = "Dash";
 	private string horizontalMovementAxis = "Horizontal";
 	private string verticalMovementAxis = "Vertical";
 
@@ -102,18 +124,62 @@ public class PlayerControler : MonoBehaviour
 
     }
 
+	// Update is called once per frame
+	void Update() {
+		GetInputs();
+		CheckMovementDir();
+		UpdateAnimations();
+		CheckCanJump();
+		CheckIfWallSliding();
+		UpdatePartikleSystem();
+	}
+
 	public void FixedUpdate() {
-		Move();
-		UpdateJumping();
+		if (!isDashing) {
+			Move();
+			UpdateJumping();
+		}
+		HandleDashing();
 		CheckSurroundings();
 		ResetButtons();
 	}
+
+	private void HandleDashing() {
+		if (dashPressed && !isDashing && canDash) { // Start Dash
+			dashEndTime = Time.time + dashDuration;
+			isDashing = true;
+			canDash = false;
+			gravityValueStorageDuringDash = body.gravityScale;
+			body.gravityScale = 0f;
+
+			normalizedDashDirection = new Vector3(horizontalInput, verticalInput);
+			if (normalizedDashDirection == Vector3.zero) {
+				normalizedDashDirection = facingRight ? Vector3.right : Vector3.left;
+			} else {
+				normalizedDashDirection.Normalize();
+			}
+
+
+		}
+
+		if (isDashing && Time.time >= dashEndTime) { // End dash
+			body.gravityScale = gravityValueStorageDuringDash;
+			body.velocity = Vector2.zero;
+			isDashing = false;
+		}
+
+		if(isDashing) {
+			body.velocity = normalizedDashDirection * (Time.fixedDeltaTime * dashVelocity);
+		}
+	}
+
 	/// <summary>
 	/// Resets the intern Buttons
 	/// </summary>
 	private void ResetButtons() {
 		jumpPressed = false;
 		jumpNowReleased = false;
+		dashPressed = false;
 	}
 
 	/// <summary>
@@ -127,6 +193,9 @@ public class PlayerControler : MonoBehaviour
 
 		if (!jumpNowReleased)
 			jumpNowReleased = Input.GetButtonUp(jumpButton);
+
+		if (!dashPressed)
+			dashPressed = Input.GetButtonDown(dashButton);
 	}
 
 	/// <summary>
@@ -244,16 +313,7 @@ public class PlayerControler : MonoBehaviour
 		directionFlipTransform.rotation = Quaternion.Euler(0, (directionFlipTransform.eulerAngles.y + 180) % 360, 0);
 	}
 
-	// Update is called once per frame
-	void Update()
-    {
-		GetInputs();
-		CheckMovementDir();
-		UpdateAnimations();
-		CheckCanJump();
-		CheckIfWallSliding();
-		UpdatePartikleSystem();
-    }
+	
 
 	private void UpdatePartikleSystem() {
 		ParticleSystem.EmissionModule emission = partikelSystem.emission;
@@ -273,6 +333,7 @@ public class PlayerControler : MonoBehaviour
 	private void CheckCanJump() {
 		if (isGrounded && body.velocity.y <= 0) {
 			amountOfJumpsLeft = amountOfJumps;
+			canDash = true;
 		}
 
 		canJump = amountOfJumpsLeft > 0;
@@ -326,6 +387,7 @@ public class PlayerControler : MonoBehaviour
 	public bool IsGrounded() {
 		return isGrounded;
 	}
+
 }
 
 
