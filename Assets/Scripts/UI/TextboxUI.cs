@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class TextboxUI : MonoBehaviour
 {
+
 	public static bool inConversation = false;
 	private static bool finishedCurrentMsgPrinting = false;
 	private static int selectedAnswer = -1;
@@ -16,6 +18,7 @@ public class TextboxUI : MonoBehaviour
 	[SerializeField] private GameObject answerPrefab;
 
 
+	private LinkedList<string> lastConversatonResult = new LinkedList<string>();
 
 	public void Awake() {
 		instance = this;
@@ -23,6 +26,8 @@ public class TextboxUI : MonoBehaviour
 	}
 
 	public void StartConversation(Conversation conversation) {
+		lastConversatonResult.Clear();
+
 		PlayerControler.Shutdown();
 		image.enabled = true;
 		guiTxt.enabled = true;
@@ -33,6 +38,8 @@ public class TextboxUI : MonoBehaviour
 	public IEnumerator ShowMsg(Conversation conversation) {
 		Conversation.ConversationNode currentNode = conversation.startNode;
 		while (true) {
+			lastConversatonResult.AddLast(currentNode.label);
+
 			if (currentNode.label.ToLower().Contains("jump")) {
 				string jumpName = currentNode.label.Substring(currentNode.label.IndexOf(" ") + 1);
 				Conversation.ConversationNode newNode = conversation.GetByName(jumpName);
@@ -99,6 +106,10 @@ public class TextboxUI : MonoBehaviour
 			}
 		}
 		finishedCurrentMsgPrinting = true;
+	}
+
+	public string[] GetLastConversationPath() {
+		return lastConversatonResult.ToArray();
 	}
 }
 
