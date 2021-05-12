@@ -5301,6 +5301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 10000
   isEnemy: 0
+  touchDamage: 0
+  touchKnockback: 0
   invincibilityTimeAfterHit: 0
   knockbackResistance: 0.5
 --- !u!50 &3246011221003511070
