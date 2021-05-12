@@ -157,7 +157,7 @@ public class PlayerControler : MonoBehaviour
 			gravityValueStorageDuringDash = body.gravityScale;
 			body.gravityScale = 0f;
 
-			normalizedDashDirection = new Vector3(horizontalInput, verticalInput);
+			normalizedDashDirection = new Vector3(Input.GetAxisRaw(horizontalMovementAxis), Input.GetAxisRaw(verticalMovementAxis));
 			if (normalizedDashDirection == Vector3.zero) {
 				normalizedDashDirection = facingRight ? Vector3.right : Vector3.left;
 			} else {
@@ -172,6 +172,7 @@ public class PlayerControler : MonoBehaviour
 			eyeCandy.transform.localScale = dashEyeCandyCopyBase.lossyScale;
 			foreach(SpriteRenderer renderer in eyeCandy.GetComponentsInChildren<SpriteRenderer>()) {
 				renderer.color = dashEyeCandyColor;
+				renderer.sortingOrder -= 3;
 			}
 			Destroy(eyeCandy, dashEyeCandyLifeTime);
 			nextDashEyeCandy = Time.time + (1 / dashEyeCandyPerSecond);
