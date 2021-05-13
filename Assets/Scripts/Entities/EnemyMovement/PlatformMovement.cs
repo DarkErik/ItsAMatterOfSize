@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformMovement : MonoBehaviour
+public class PlatformMovement : BasicMovement
 {
 	private static readonly float NOT_MOVED_THRESHHOLD_SQR = 0.001f * 0.001f;
 
@@ -14,13 +14,10 @@ public class PlatformMovement : MonoBehaviour
 
 	[SerializeField] private float groundCheckRadius = 0.2f;
 
-	private Rigidbody2D rb;
 	private Vector3 lastPosition = Vector3.zero;
 	private bool flipedMidAir = false;
 
-	private void Awake() {
-		rb = GetComponent<Rigidbody2D>();
-	}
+
 
 
 	public void FixedUpdate() {
