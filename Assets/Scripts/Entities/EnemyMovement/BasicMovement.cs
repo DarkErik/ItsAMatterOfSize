@@ -30,4 +30,6 @@ public abstract class BasicMovement : MonoBehaviour
 	public void WakeUp() {
 		this.enabled = true;
 	}
+
+	public abstract bool MovingRight();
 }

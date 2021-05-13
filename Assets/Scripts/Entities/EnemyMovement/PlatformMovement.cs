@@ -46,6 +46,10 @@ public class PlatformMovement : BasicMovement
 		rotationBase.rotation = Quaternion.Euler(rotationBase.rotation.eulerAngles.x, (rotationBase.rotation.eulerAngles.y + 180) % 360, rotationBase.rotation.eulerAngles.z);
 	}
 
+	public override bool MovingRight() {
+		return lookingRight;
+	}
+
 	private void OnDrawGizmosSelected() {
 		if (groundCheck != null) Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 	}
