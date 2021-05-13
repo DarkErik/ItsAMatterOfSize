@@ -11,6 +11,8 @@ public class Entity : MonoBehaviour
 	protected int hp;
 	[SerializeField] protected int maxHp = 10;
 	[SerializeField] protected bool isEnemy = true;
+	[SerializeField] protected int touchDamage = 1;
+	[SerializeField] protected float touchKnockback = 3;
 	[SerializeField] protected float invincibilityTimeAfterHit = 0f;
 
 	[Range(0, 1)]
@@ -56,7 +58,7 @@ public class Entity : MonoBehaviour
 			Kill();
 		} else {
 			if (knockbackResistance < 1) {
-				if (IsPlayer()) PlayerControler.Shutdown(0.1f);
+				if (IsPlayer()) PlayerControler.Shutdown(0.2f);
 
 				rb.velocity = knockback * (1 - knockbackResistance);
 			}
@@ -94,13 +96,21 @@ public class Entity : MonoBehaviour
 	/// <param name="knockbackStrenght">The power of the knockback</param>
 	/// <returns></returns>
 	public Vector3 GetKnockbackOutOfPosition(GameObject attacker, float knockbackStrenght) {
-		Vector3 dir = (this.transform.position - attacker.transform.position).normalized;
-		dir.y = 1;
-		return dir * knockbackStrenght;
+		Vector3 dir = (this.transform.position - attacker.transform.position).normalized * knockbackStrenght;
+		if (dir.y < 13) dir.y += 13;
+		return dir ;
 	}
 
 	public bool IsEnemy() {
 		return isEnemy;
+	}
+
+	public void OnCollisionEnter2D(Collision2D collision) {
+		if (touchDamage <= 0) return;
+		Entity ent = collision.gameObject.GetComponent<Entity>();
+		if (ent != null && ent.IsEnemy() != this.IsEnemy()) {
+			ent.TryDamage(touchDamage, ent.GetKnockbackOutOfPosition(gameObject, touchKnockback));
+		}
 	}
 
 }

@@ -15,7 +15,7 @@ public class SpriteSorterEditor : Editor
 		sorter.layer = EditorGUILayout.IntField(sorter.isChild ? "Offset from Base" : "Layer", sorter.layer);
 
 		if (GUILayout.Button("Move Up")) sorter.layer++;
-		if (GUILayout.Button("Move Up")) sorter.layer--;
+		if (GUILayout.Button("Move Down")) sorter.layer--;
 
 		if (!sorter.isChild) {
 			if (GUILayout.Button("Randomize Color")) {

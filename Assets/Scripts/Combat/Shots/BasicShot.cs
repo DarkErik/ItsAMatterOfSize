@@ -69,6 +69,12 @@ public class BasicShot : MonoBehaviour
 	/// Destroys this shot!
 	/// </summary>
 	public virtual void Kill() {
+		foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>()) {
+			ps.transform.SetParent(null);
+			ParticleSystem.EmissionModule em = ps.emission;
+			em.enabled = false;
+			Destroy(ps.gameObject, ps.main.startLifetime.constantMax);
+		}
 		Destroy(this.gameObject);
 	}
 }

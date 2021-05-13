@@ -24,9 +24,9 @@ public class BasicWeapon : MonoBehaviour
 		}
 	}
 
-	public void Fire(Vector2 direction) {
+	public void Fire(float angleDEG) {
 		if (canShoot()) {
-			createBullet(direction);
+			createBullet(angleDEG);
 			nextTimeShot = Time.time + 1 / shotsPerSecound;
 			currentAmmunition--;
 			if (currentAmmunition <= 0) {
@@ -35,13 +35,18 @@ public class BasicWeapon : MonoBehaviour
 		}
 	}
 
-	private bool canShoot() {
-		return Time.time >= nextTimeShot && currentAmmunition >= 1;
+	public void Fire(Vector2 direction) {
+		Fire(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 	}
 
-	private void createBullet(Vector2 direction) {
+	private bool canShoot() {
+		return Time.time >= nextTimeShot && currentAmmunition >= 1 && reloadTimestamp == -1;
+	}
+
+
+	private void createBullet(float angleDEG) {
 		var temp = Instantiate(shot);
-		temp.transform.rotation = Quaternion.Euler(0,0,Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg);
+		temp.transform.rotation = Quaternion.Euler(0,0,angleDEG);
 		temp.transform.position = shotOrigin.position;
 		temp.GetComponent<BasicShot>().Init(isEnemy);
 	}
@@ -73,4 +78,15 @@ public class BasicWeapon : MonoBehaviour
 		}
     }
 
+	public bool IsReloading() {
+		return reloadTimestamp != -1;
+	}
+
+	public Transform GetShootingOrigin() {
+		return shotOrigin;
+	}
+
+	public void ForceReload() {
+		reloadTimestamp = Time.time + reloadTime;
+	}
 }
