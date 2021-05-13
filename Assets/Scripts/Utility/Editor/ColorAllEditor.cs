@@ -11,8 +11,10 @@ public class ColorAllEditor : Editor
 		Color before = c.color;
 		c.color = EditorGUILayout.ColorField("Color", c.color);
 		if (c.color != before) {
-			foreach (SpriteRenderer r in c.GetComponentsInChildren<SpriteRenderer>())
+			foreach (SpriteRenderer r in c.GetComponentsInChildren<SpriteRenderer>()) {
 				r.color = c.color;
+				EditorUtility.SetDirty(r);
+			}
 		}
 	}
 }
