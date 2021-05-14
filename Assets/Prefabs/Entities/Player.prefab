@@ -5374,7 +5374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f835fb7229f954c4c8cdf200b95d2fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 5209672321969496333, guid: d865a8368f4eeb544b01dd588483b249, type: 3}
+  shot: {fileID: 6278930932379424467, guid: e6af9eb8fd7afca4d93c6e628c04fada, type: 3}
   magazineSize: 10
   reloadTime: 5
   shotsPerSecound: 5
