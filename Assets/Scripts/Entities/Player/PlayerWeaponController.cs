@@ -26,9 +26,7 @@ public class PlayerWeaponController : MonoBehaviour
     }
 
     private Vector2 getFireDirection() {
-
         Vector3 mousePos = Input.mousePosition;
-        Transform transform = GetComponent<Transform>();
 
         Vector2 direcVector = new Vector2(mousePos.x - Camera.main.scaledPixelWidth / 2, mousePos.y - Camera.main.scaledPixelHeight / 2);
 
