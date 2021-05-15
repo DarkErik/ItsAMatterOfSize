@@ -124,5 +124,17 @@ public static class Util {
 		return newArr;
 	}
 
+	public static void ShutWholePlayerDown() {
+		PlayerControler.Shutdown();
+	}
+
+	public static void ShutWholePlayerDown(float time) {
+		PlayerControler.Shutdown(time);
+	}
+
+	public static void WakeWholePlayerUp() {
+		PlayerControler.WakeUp();
+	}
+
 
 }
