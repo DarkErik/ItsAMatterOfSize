@@ -108,7 +108,11 @@ public class TextboxUI : MonoBehaviour
 		finishedCurrentMsgPrinting = true;
 	}
 
-	public string[] GetLastConversationPath() {
+	public LinkedList<string> GetLastConversationPath() {
+		return lastConversatonResult;
+	}
+
+	public string[] GetLastConversationPathArr() {
 		return lastConversatonResult.ToArray();
 	}
 }
