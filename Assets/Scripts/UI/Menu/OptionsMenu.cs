@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
     private Resolution[] resolutions;
 
-    [SerializeField] public Dropdown resolutionDropdown;
+    [SerializeField] public TMP_Dropdown resolutionDropdown;
 
     private void Start()
     {
@@ -44,5 +45,6 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Debug.Log("Set Resolution to: " + resolution.width + " x " + resolution.height);
     }
 }
