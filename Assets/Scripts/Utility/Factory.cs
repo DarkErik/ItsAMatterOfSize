@@ -7,7 +7,7 @@ public class Factory : MonoBehaviour
 	public static Factory instance;
 
 	public LayerMask groundMask;
-
+	public GameObject spawnEffectPrefab;
 	public void Awake() {
 		instance = this;
 	}
