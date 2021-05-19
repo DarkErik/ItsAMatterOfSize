@@ -18,22 +18,39 @@ public class OptionsMenu : MonoBehaviour
 
         List<string> options = new List<string>();
 
+        Resolution[] finalResolutions = new Resolution[resolutions.Length];
+        int filled = 0;
+
         int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++) 
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
+            //rausfiltern von Resolutions mit anderen Framerates
+            if (options.Contains(option) || resolutions[i].refreshRate != Screen.currentResolution.refreshRate) {
+                continue;
+            }
+            //Hinzufügen der aktuellen Auflösung zum Dropdownmenue
             options.Add(option);
+            //Aufnehmen der Auflösung in die Finale Liste und Fuellungsgrad vergroeßern
+            finalResolutions[filled] = resolutions[i];
+            filled++;
 
             if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
             {
-                currentResolutionIndex = i;
+                currentResolutionIndex = filled;
             }
         }
+        resolutions = finalResolutions;
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        //Test auf Duplikate (unterschiedliche)
+        //Fix richtiger Index
+        //Höchste Refreshrate 
     }
+ 
 
     public void SetFullscreen(bool isFullscreen)
     {

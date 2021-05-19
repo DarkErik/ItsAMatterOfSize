@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class CreditsSceneTransition : MonoBehaviour
 {
-    [SerializeField] private GameObject regAIrock;
-    [SerializeField] private GameObject paintRegirock;
+    [SerializeField] private SpriteRenderer regAIrock;
+    [SerializeField] private Sprite[] regirocks;
 
     public void startTransition()
     {
@@ -16,7 +16,7 @@ public class CreditsSceneTransition : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButton("Fire1")) 
+        if (Input.GetButtonUp("Fire1")) 
         {
             startTransition();
         }
@@ -34,13 +34,11 @@ public class CreditsSceneTransition : MonoBehaviour
 
         if (rand == 0)
         {
-            regAIrock.SetActive(false);
-            paintRegirock.SetActive(true);
+            regAIrock.sprite = regirocks[0];
         }
         else 
         {
-            regAIrock.SetActive(true);
-            paintRegirock.SetActive(false);
+            regAIrock.sprite = regirocks[1];
         }
     }
 }
