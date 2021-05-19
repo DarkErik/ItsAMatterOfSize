@@ -6,6 +6,8 @@ public class Factory : MonoBehaviour
 {
 	public static Factory instance;
 
+	public GameObject playerPrefab;
+
 	public LayerMask groundMask;
 	public GameObject spawnEffectPrefab;
 	public void Awake() {

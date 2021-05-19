@@ -113,5 +113,13 @@ public class Entity : MonoBehaviour
 		}
 	}
 
+	public void SetHp(int amount) {
+		hp = amount;
+	}
+
+	public int GetHp() {
+		return hp;
+	}
+
 }
 
