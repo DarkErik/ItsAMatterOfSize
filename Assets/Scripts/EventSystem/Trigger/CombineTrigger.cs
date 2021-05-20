@@ -10,11 +10,25 @@ public class CombineTrigger : Trigger
 	[SerializeField][TextArea(2, 8)]
 	private string combination;
 
+	[SerializeField] private float delayed = 0f;
+
 	protected override void Update() {
 		base.Update();
-		bool b;
-		SetState(b = GetStateFromString());
-		Debug.Log(b);
+
+
+		bool state = GetStateFromString();
+		if (state != currentState.active) {
+			if (delayed == 0)
+				SetState(state);
+			else
+				StartCoroutine(SetStateDelayed(state));
+		}
+		
+	}
+
+	private IEnumerator SetStateDelayed(bool state) {
+		yield return new WaitForSecondsRealtime(delayed);
+		SetState(state);
 	}
 
 	protected bool GetStateFromString() {
@@ -47,7 +61,7 @@ public class CombineTrigger : Trigger
 
 			}
 		}
-		Debug.Log(s);
+
 
 		return Resolve(s);
 	}

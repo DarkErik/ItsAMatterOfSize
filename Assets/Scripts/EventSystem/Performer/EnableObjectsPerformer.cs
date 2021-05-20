@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnableObjectsPerformer : Performer
 {
 	[SerializeField] private GameObject[] gameObjects;
+	[SerializeField] private bool invertBehaivior = false;
 	[SerializeField] private bool invertBehaiviorOnRelease = false;
 	[SerializeField] private bool cameraFocus = true;
 	[SerializeField] private bool spawnParticleEffect = true;
@@ -13,7 +14,7 @@ public class EnableObjectsPerformer : Performer
 
 	protected override void Perform(TriggerState state) {
 		if (state.just) {
-			if (state.active) {
+			if (state.active == !invertBehaivior) {
 				enableObjects = true;
 
 				if (cameraFocus) {
