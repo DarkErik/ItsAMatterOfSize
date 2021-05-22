@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+	[SerializeField] private SceneObj startScene;
+	[SerializeField] private SceneObj credits;
+
     public void LoadGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		SceneTransition.LoadScene(startScene.name);
     }
 
     public void LoadCredits()
     {
-        SceneManager.LoadScene("Credits");
+		SceneTransition.LoadScene(credits.name);
     }
 
     public void QuitGame()
