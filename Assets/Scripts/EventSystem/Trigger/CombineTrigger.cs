@@ -10,12 +10,40 @@ public class CombineTrigger : Trigger
 	[SerializeField][TextArea(2, 8)]
 	private string combination;
 
+	[SerializeField] private float delayed = 0f;
+
+	private LinkedList<float> timeStamps = new LinkedList<float>();
+	
+
 	protected override void Update() {
 		base.Update();
-		bool b;
-		SetState(b = GetStateFromString());
-		Debug.Log(b);
+
+
+		bool state = GetStateFromString();
+		if (delayed == 0)
+			SetState(state);
+		else { 
+			if ((state != currentState.active && timeStamps.Count % 2 == 0) || (state == currentState.active && timeStamps.Count % 2 == 1)) {
+				timeStamps.AddLast(Time.time + delayed);
+			}
+			bool again = false;
+			do {
+				again = false;
+				foreach (float stamp in timeStamps) {
+					if (Time.time >= stamp) {
+						SetState(!GetTriggerState().active);
+						again = true;
+						timeStamps.Remove(stamp);
+						break;
+					}
+				}
+
+			} while (again);
+
+		}
+		
 	}
+
 
 	protected bool GetStateFromString() {
 		string s = combination.Substring(0);
@@ -47,7 +75,7 @@ public class CombineTrigger : Trigger
 
 			}
 		}
-		Debug.Log(s);
+
 
 		return Resolve(s);
 	}
