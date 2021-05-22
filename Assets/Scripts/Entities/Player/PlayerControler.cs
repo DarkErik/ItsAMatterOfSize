@@ -370,6 +370,7 @@ public class PlayerControler : MonoBehaviour
 	}
 
 	private static void _Shutdown() {
+		if (instance == null) return;
 		instance.enabled = false;
 		instance.body.velocity = new Vector2(0, instance.body.velocity.y);
 
@@ -379,6 +380,7 @@ public class PlayerControler : MonoBehaviour
 	/// Reactivates the behaivour after a call of Shutdown
 	/// </summary>
 	public static void WakeUp() {
+		if (instance == null) return;
 		instance.enabled = true;
 	}
 

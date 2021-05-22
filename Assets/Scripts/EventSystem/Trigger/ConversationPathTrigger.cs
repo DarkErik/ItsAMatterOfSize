@@ -10,7 +10,7 @@ public class ConversationPathTrigger : Trigger
 	protected override void Update() {
 		base.Update();
 
-		
+			
 		SetState(ContainsAll(TextboxUI.instance.GetLastConversationPath(), notesContaining) && !TextboxUI.inConversation);
 	}
 

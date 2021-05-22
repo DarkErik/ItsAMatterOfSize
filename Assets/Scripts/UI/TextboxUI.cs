@@ -9,6 +9,7 @@ public class TextboxUI : MonoBehaviour
 {
 
 	public static bool inConversation = false;
+	public static bool isPlottingText = false;
 	private static bool finishedCurrentMsgPrinting = false;
 	private static int selectedAnswer = -1;
 	public static TextboxUI instance;
@@ -53,7 +54,7 @@ public class TextboxUI : MonoBehaviour
 
 			foreach (string txt in currentNode.text) {
 				finishedCurrentMsgPrinting = false;
-				Coroutine c = StartCoroutine(PrintMsg(txt, 0.01f));
+				Coroutine c = StartCoroutine(PrintMsg(txt, 0.01f, conversation.speakingSound));
 				yield return new WaitUntil(() => finishedCurrentMsgPrinting);
 				yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
 				yield return new WaitUntil(() => Input.GetButtonUp("Jump"));
@@ -95,17 +96,24 @@ public class TextboxUI : MonoBehaviour
 		inConversation = false;
 	}
 
-	public IEnumerator PrintMsg(string msg, float delay) {
+	public IEnumerator PrintMsg(string msg, float delay, Sound sound) {
+		isPlottingText = true;
+
 		for(int i = 0; i < msg.Length; i++) {
 			guiTxt.text = msg.Substring(0, i + 1);
+
+			if (sound != Sound.NONE && msg[i] != ' ') SoundManager.PlaySound(sound, true);
+
 			yield return new WaitForSeconds(delay);
 			if (Input.GetButtonDown("Jump")) {
 				guiTxt.text = msg;
+				isPlottingText = false;
 				yield return new WaitUntil(() => Input.GetButtonUp("Jump"));
 				break;
 			}
 		}
 		finishedCurrentMsgPrinting = true;
+		isPlottingText = false;
 	}
 
 	public LinkedList<string> GetLastConversationPath() {
@@ -124,6 +132,7 @@ public class TextboxUI : MonoBehaviour
 public class Conversation {
 
 	public ConversationNode startNode;
+	public Sound speakingSound = Sound.NONE;
 
 	[System.Serializable]
 	public class ConversationNode {
