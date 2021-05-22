@@ -12,24 +12,38 @@ public class CombineTrigger : Trigger
 
 	[SerializeField] private float delayed = 0f;
 
+	private LinkedList<float> timeStamps = new LinkedList<float>();
+	
+
 	protected override void Update() {
 		base.Update();
 
 
 		bool state = GetStateFromString();
-		if (state != currentState.active) {
-			if (delayed == 0)
-				SetState(state);
-			else
-				StartCoroutine(SetStateDelayed(state));
+		if (delayed == 0)
+			SetState(state);
+		else { 
+			if ((state != currentState.active && timeStamps.Count % 2 == 0) || (state == currentState.active && timeStamps.Count % 2 == 1)) {
+				timeStamps.AddLast(Time.time + delayed);
+			}
+			bool again = false;
+			do {
+				again = false;
+				foreach (float stamp in timeStamps) {
+					if (Time.time >= stamp) {
+						SetState(!GetTriggerState().active);
+						again = true;
+						timeStamps.Remove(stamp);
+						break;
+					}
+				}
+
+			} while (again);
+
 		}
 		
 	}
 
-	private IEnumerator SetStateDelayed(bool state) {
-		yield return new WaitForSecondsRealtime(delayed);
-		SetState(state);
-	}
 
 	protected bool GetStateFromString() {
 		string s = combination.Substring(0);

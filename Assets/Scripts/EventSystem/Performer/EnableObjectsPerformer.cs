@@ -15,6 +15,8 @@ public class EnableObjectsPerformer : Performer
 	protected override void Perform(TriggerState state) {
 		if (state.just) {
 			if (state.active == !invertBehaivior) {
+				if (invertBehaivior && !invertBehaiviorOnRelease) return;
+
 				enableObjects = true;
 
 				if (cameraFocus) {
@@ -28,7 +30,8 @@ public class EnableObjectsPerformer : Performer
 					}
 				}
 			} else {
-				if (!invertBehaiviorOnRelease) return;
+				if (!invertBehaivior &&!invertBehaiviorOnRelease) return;
+
 				enableObjects = false;
 
 				if (cameraFocus) {

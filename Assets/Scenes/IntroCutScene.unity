@@ -303,7 +303,7 @@ Transform:
   - {fileID: 1562670458}
   - {fileID: 1701864762}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &590779358
 PrefabInstance:
@@ -385,8 +385,24 @@ GameObject:
   - component: {fileID: 813038874}
   - component: {fileID: 813038873}
   - component: {fileID: 813038872}
+  - component: {fileID: 813038881}
+  - component: {fileID: 813038880}
+  - component: {fileID: 813038879}
+  - component: {fileID: 813038878}
+  - component: {fileID: 813038877}
+  - component: {fileID: 813038876}
+  - component: {fileID: 813038875}
+  - component: {fileID: 813038891}
+  - component: {fileID: 813038882}
+  - component: {fileID: 813038890}
+  - component: {fileID: 813038889}
+  - component: {fileID: 813038888}
+  - component: {fileID: 813038886}
+  - component: {fileID: 813038885}
+  - component: {fileID: 813038884}
+  - component: {fileID: 813038883}
   m_Layer: 0
-  m_Name: Start
+  m_Name: CutSceneTimeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &813038863
 MonoBehaviour:
@@ -694,9 +710,327 @@ MonoBehaviour:
           - answerText: Nichts da!
             answerNode:
               label: 
-              text: []
-              answers: []
+              text:
+              - "Der gesetzlich vorgeschriebende Feuerl\xF6scher"
+              - Ist schon bezahlt.
+              - "Lohnt sich nicht, jetzt auf zuh\xF6hren!"
+              answers:
+              - answerText: 
+                answerNode:
+                  label: Jump Conv3
+                  text: []
+                  answers: []
+      - answerText: "Kein zu\xFCck mehr!"
+        answerNode:
+          label: Continue
+          text:
+          - Meine Rache wird kommen!
+          - So soll es sein!
+          - 'Der Maximator wird mir zu, '
+          - nun ja,
+          - "meiner wahren Gr\xF6\xDFe verhelfen!"
+          answers: []
     speakingSound: 0
+--- !u!114 &813038875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e44788e3795c9844a2b3919b64a4621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038876}
+  onlyPerformOnce: 0
+  anim: {fileID: 1329233214}
+  justTriggeredTriggerName: Blackout
+  triggeredTriggerName: 
+  justReleasedTriggerName: 
+  releasedTriggerName: 
+--- !u!114 &813038876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df999fd1242a70f43a878bbc64022151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+  - {fileID: 813038878}
+  combination: 0.T
+  delayed: 2.5
+--- !u!114 &813038877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e44788e3795c9844a2b3919b64a4621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038878}
+  onlyPerformOnce: 0
+  anim: {fileID: 1329233214}
+  justTriggeredTriggerName: Blackout
+  triggeredTriggerName: 
+  justReleasedTriggerName: 
+  releasedTriggerName: 
+--- !u!114 &813038878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df999fd1242a70f43a878bbc64022151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+  - {fileID: 813038881}
+  combination: 0.T
+  delayed: 1.5
+--- !u!114 &813038879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fb47352ef83004b8f6272bbaade22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038881}
+  onlyPerformOnce: 0
+  gameObjects:
+  - {fileID: 1701864761}
+  invertBehaivior: 0
+  invertBehaiviorOnRelease: 0
+  cameraFocus: 0
+  spawnParticleEffect: 0
+--- !u!114 &813038880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fb47352ef83004b8f6272bbaade22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038881}
+  onlyPerformOnce: 0
+  gameObjects:
+  - {fileID: 1562670457}
+  invertBehaivior: 1
+  invertBehaiviorOnRelease: 0
+  cameraFocus: 0
+  spawnParticleEffect: 0
+--- !u!114 &813038881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304959bf27ca32d43a7f30fef6f29ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notesContaining:
+  - Continue
+--- !u!114 &813038882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fb47352ef83004b8f6272bbaade22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038891}
+  onlyPerformOnce: 0
+  gameObjects:
+  - {fileID: 392402627}
+  invertBehaivior: 1
+  invertBehaiviorOnRelease: 0
+  cameraFocus: 0
+  spawnParticleEffect: 0
+--- !u!114 &813038883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05253ac6cf015294081510ee222af47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038884}
+  onlyPerformOnce: 0
+  scene: {fileID: 11400000, guid: 9dd5ff37cc54d874c9671bf931e15649, type: 2}
+--- !u!114 &813038884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304959bf27ca32d43a7f30fef6f29ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notesContaining:
+  - Conv5
+--- !u!114 &813038885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad0e64539a4a744687235aa544fc817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038888}
+  onlyPerformOnce: 0
+  conversation:
+    startNode:
+      label: Conv5
+      text:
+      - "*Eine Massive Fliege entf\xFChrt, den Professor*"
+      - "*Schon w\xE4hrend des Fluges f\xE4ngt seine Haut an abzubr\xF6seln*"
+      - "*Wird er jemals wieder seine einstige gr\xF6\xDFe erreichen?*"
+      - '*Dies steht in den Sternen geschrieben*'
+      answers: []
+    speakingSound: 0
+--- !u!114 &813038886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fb47352ef83004b8f6272bbaade22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038888}
+  onlyPerformOnce: 0
+  gameObjects:
+  - {fileID: 1346397207}
+  invertBehaivior: 1
+  invertBehaiviorOnRelease: 0
+  cameraFocus: 0
+  spawnParticleEffect: 0
+--- !u!114 &813038888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304959bf27ca32d43a7f30fef6f29ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notesContaining:
+  - Conv4
+--- !u!114 &813038889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad0e64539a4a744687235aa544fc817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038891}
+  onlyPerformOnce: 0
+  conversation:
+    startNode:
+      label: Conv4
+      text:
+      - Muhahaha...
+      - URGH...
+      - NEIIIIIIIIIIIIIIIIIIIIIN
+      - Was ist mit mir passiert?
+      - "Warum ist alles hier so gro\xDF?"
+      - 'Oder bin ich '
+      - ETWA KLEIN?
+      - Nein, etwas muss schief gelaufen sein!
+      - "Verdammt! Zeit den Prozess r\xFCckg\xE4ngig zu machen."
+      - "Da stand was davon, dass die Haut abfallen k\xF6nnte,"
+      - "Wenn man zu lange seine Gr\xF6\xDFe ver\xE4ndert."
+      - '*SUMM* Hu was ist den dass?'
+      - AHHH Hilfe!
+      answers: []
+    speakingSound: 0
+--- !u!114 &813038890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fb47352ef83004b8f6272bbaade22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 813038891}
+  onlyPerformOnce: 0
+  gameObjects:
+  - {fileID: 1346397207}
+  invertBehaivior: 0
+  invertBehaiviorOnRelease: 0
+  cameraFocus: 0
+  spawnParticleEffect: 0
+--- !u!114 &813038891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813038859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df999fd1242a70f43a878bbc64022151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+  - {fileID: 813038876}
+  combination: 0.T
+  delayed: 1
 --- !u!1 &887559268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1430,142 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1346397207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346397212}
+  - component: {fileID: 1346397211}
+  - component: {fileID: 1346397210}
+  - component: {fileID: 1346397209}
+  - component: {fileID: 1346397208}
+  m_Layer: 0
+  m_Name: Angry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1346397208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346397207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e44788e3795c9844a2b3919b64a4621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1346397209}
+  onlyPerformOnce: 0
+  anim: {fileID: 1346397210}
+  justTriggeredTriggerName: ToSpeaking
+  triggeredTriggerName: 
+  justReleasedTriggerName: ToIdle
+  releasedTriggerName: 
+--- !u!114 &1346397209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346397207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c802d0a9ebf26947821be00f25c91ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1346397210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346397207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b8410006c6c86b45a09098c8cd5d4de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &1346397211
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346397207}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -9149005590073188111, guid: 330d050e4e579d1478e622132bb6e7ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8.66, y: 8.19}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1346397212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346397207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.13, z: 0}
+  m_LocalScale: {x: 0.66265, y: 0.66265, z: 0.66265}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562670457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1637,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 636782994655732434, guid: 54fc952988bb289498b90a9e07db2295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1250,7 +1720,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6296917576086021652, guid: 54fc952988bb289498b90a9e07db2295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1462,5 +1932,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
