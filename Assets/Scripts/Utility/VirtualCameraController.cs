@@ -12,6 +12,10 @@ public class VirtualCameraController : MonoBehaviour
 		instance = this;
 	}
 
+	public void Start() {
+		SetFollow(PlayerControler.instance.transform);
+	}
+
 	public void SetFollow(Transform follow) {
 		cam.Follow = follow;
 	}
