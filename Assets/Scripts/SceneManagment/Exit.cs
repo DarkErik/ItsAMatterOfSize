@@ -35,7 +35,7 @@ public class Exit : MonoBehaviour {
 
 	public void Start() {
 		if (exitSpawnName != "" && exitSpawnName == name) {
-			SpawnNewPlayer(spawnPosition.position);
+			SpawnNewPlayer(spawnPosition.position, PlayerData.instance);
 
 			
 
@@ -43,10 +43,10 @@ public class Exit : MonoBehaviour {
 		}
 	}
 
-	public static void SpawnNewPlayer(Vector3 spawnPosition) {
+	public static void SpawnNewPlayer(Vector3 spawnPosition, PlayerData data) {
 		Destroy(GameObject.Find("Player"));
 		GameObject player = Instantiate(Factory.instance.playerPrefab, spawnPosition, default);
-		PlayerData.instance.ApplyPlayerData(player);
+		data.ApplyPlayerData(player);
 		VirtualCameraController.instance.SetFollow(player.transform);
 	}
 
