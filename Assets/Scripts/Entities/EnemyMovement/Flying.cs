@@ -5,6 +5,7 @@ using UnityEngine;
 public class Flying : BasicMovement {
 	[SerializeField] private float speed;
 	[SerializeField] private float minDistanceFromPlayer = 4;
+	[SerializeField] private string useToTriggerBoolInstead = "";
 	[SerializeField] private Transform rotationBase;
 
 	private bool flyingRight = false;
@@ -12,15 +13,29 @@ public class Flying : BasicMovement {
 		return flyingRight;
 	}
 
+	private Animator anim;
+	public void Start() {
+		if (useToTriggerBoolInstead != "") anim = GetComponent<Animator>();
+	}
+
 
 	private void FixedUpdate() {
 		Vector3 toPlayer = PlayerControler.instance.transform.position - transform.position;
 		if (toPlayer.sqrMagnitude > minDistanceFromPlayer * minDistanceFromPlayer) {
+			if (useToTriggerBoolInstead != "") anim.SetBool(useToTriggerBoolInstead, false);
 			toPlayer.Normalize();
 			if (toPlayer.x > 0 != flyingRight)
 				Flip();
 
 			transform.position += toPlayer * speed * Time.fixedDeltaTime;
+		} else {
+			if (useToTriggerBoolInstead != "") {
+				anim.SetBool(useToTriggerBoolInstead, true);
+				toPlayer.Normalize();
+				if (toPlayer.x > 0 != flyingRight)
+					Flip();
+				transform.position += toPlayer * speed * Time.fixedDeltaTime;
+			}
 		}
 	}
 
