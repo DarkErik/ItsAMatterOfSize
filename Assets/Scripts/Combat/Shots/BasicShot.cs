@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class BasicShot : MonoBehaviour
 {
+	private float MAX_LIFE_TIME = 10;
+
 	[SerializeField] protected int damage = 2;
 	[SerializeField] protected float speed = 10;
 	[SerializeField] protected float knockbackStrenght = 2f;
@@ -19,6 +21,8 @@ public class BasicShot : MonoBehaviour
 	/// <param name="isEnemy">whether the shot is in the enemy team</param>
 	public virtual void Init(bool isEnemy) {
 		this.isEnemy = isEnemy;
+
+		Destroy(this.gameObject, MAX_LIFE_TIME);
 
 		if (isEnemy) {
 			this.gameObject.layer = LayerMask.NameToLayer("EnemyBullets");

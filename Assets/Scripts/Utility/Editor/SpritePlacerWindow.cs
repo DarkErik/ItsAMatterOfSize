@@ -8,7 +8,8 @@ public class SpritePlacerWindow : EditorWindow {
 	enum SpriteLayer {
 		BACKGROUND,
 		FOREGROUND,
-		BLACK_FOREGROUND
+		BLACK_FOREGROUND,
+		PERSPECTIVE_BACKGROUND
 	}
 
 	private SpriteDictionary dic;
@@ -22,7 +23,8 @@ public class SpritePlacerWindow : EditorWindow {
 	private bool seperateScaleAxis = false;
 	private float rotation = 0;
 	private bool flipRandomX = true;
-
+	private float zMin = 0;
+	private float zMax = 0;
 
 
 	private bool mouseInSceneView = false;
@@ -61,6 +63,9 @@ public class SpritePlacerWindow : EditorWindow {
 		seperateScaleAxis = EditorGUILayout.Toggle("Seperate Scale Axis", seperateScaleAxis);
 		rotation = EditorGUILayout.Slider("Rotation", rotation, 0, 360);
 		flipRandomX = EditorGUILayout.Toggle("Flip Random X", flipRandomX);
+
+		EditorGUILayout.MinMaxSlider("Distance", ref zMin, ref zMax, 0, 4);
+		if (zMax > 0) spriteLayer = SpriteLayer.PERSPECTIVE_BACKGROUND;
 	}
 
 	public void CustomUpdate(SceneView view) {
@@ -106,7 +111,8 @@ public class SpritePlacerWindow : EditorWindow {
 			case EventType.MouseMove:
 				Camera cam = Camera.current;
 				Vector3 newPos = cam.ScreenToWorldPoint(new Vector2(e.mousePosition.x, cam.pixelHeight -e.mousePosition.y));
-				newPos.z = 0;
+				newPos.z = Random.Range(zMin, zMax);
+				
 				nextObject.transform.position = newPos;
 
 				e.Use();
@@ -126,6 +132,9 @@ public class SpritePlacerWindow : EditorWindow {
 						break;
 					case SpriteLayer.BLACK_FOREGROUND:
 						parent = GameObject.Find("Black Foreground");
+						break;
+					case SpriteLayer.PERSPECTIVE_BACKGROUND:
+						parent = GameObject.Find("Perspective Background");
 						break;
 				}
 
@@ -163,6 +172,9 @@ public class SpritePlacerWindow : EditorWindow {
 
 	private void SetObjectToCurrentLayer() {
 		int sortingLayer = -1;
+		SpriteRenderer r = nextObject.GetComponent<SpriteRenderer>();
+		r.sortingOrder = Random.Range(int.MinValue, int.MaxValue);
+
 		switch (spriteLayer) {
 			case SpriteLayer.BACKGROUND:
 				sortingLayer = SortingLayer.NameToID("Background Objects");
@@ -173,8 +185,15 @@ public class SpritePlacerWindow : EditorWindow {
 			case SpriteLayer.BLACK_FOREGROUND:
 				sortingLayer = SortingLayer.NameToID("Black Foreground");
 				break;
+			case SpriteLayer.PERSPECTIVE_BACKGROUND:
+				sortingLayer = SortingLayer.NameToID("Perspective Background");
+				if (nextObject.transform.position.z != 0)
+					r.sortingOrder = (int)(nextObject.transform.position.z * 1000);
+				break;
 		}
+
+		r.sortingLayerID = sortingLayer;
 		
-		nextObject.GetComponent<SpriteRenderer>().sortingLayerID = sortingLayer;
+
 	}
 }
