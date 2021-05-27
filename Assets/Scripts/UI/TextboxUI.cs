@@ -33,6 +33,9 @@ public class TextboxUI : MonoBehaviour
 		image.enabled = true;
 		guiTxt.enabled = true;
 		inConversation = true;
+
+		if (conversation.freezeTime) Time.timeScale = 0f;
+
 		StartCoroutine(ShowMsg(conversation));
 	}
 
@@ -94,6 +97,8 @@ public class TextboxUI : MonoBehaviour
 		guiTxt.enabled = false;
 
 		inConversation = false;
+
+		if (conversation.freezeTime) Time.timeScale = 1f;
 	}
 
 	public IEnumerator PrintMsg(string msg, float delay, Sound sound) {
@@ -102,9 +107,9 @@ public class TextboxUI : MonoBehaviour
 		for(int i = 0; i < msg.Length; i++) {
 			guiTxt.text = msg.Substring(0, i + 1);
 
-			if (sound != Sound.NONE && msg[i] != ' ') SoundManager.PlaySound(sound, true);
+			if (sound != Sound.NONE && char.IsLetterOrDigit(msg[i])) SoundManager.PlaySound(sound, true);
 
-			yield return new WaitForSeconds(delay);
+			yield return new WaitForSecondsRealtime(delay);
 			if (Input.GetButtonDown("Jump")) {
 				guiTxt.text = msg;
 				isPlottingText = false;
@@ -130,7 +135,7 @@ public class TextboxUI : MonoBehaviour
 /// </summary>
 [System.Serializable]
 public class Conversation {
-
+	public bool freezeTime = false;
 	public ConversationNode startNode;
 	public Sound speakingSound = Sound.NONE;
 

@@ -11,7 +11,13 @@ public enum Sound {
 	BASIC_BACKGROUND_MUSIC,
 	PLAYER_FOOTSTEPS,
 	PLAYER_JUMP,
-	PLAYER_LAND
+	PLAYER_LAND,
+	PLAYER_HURT,
+	SHOT,
+	SHOT_HIT,
+	RELOAD,
+	PROF_SPEAKINIG,
+	FLY_SPEAKING
 }
 
 public static class SoundUtility {
@@ -19,6 +25,10 @@ public static class SoundUtility {
 		switch(s) {
 			case Sound.PLAYER_FOOTSTEPS:
 				return 0.4f;
+			case Sound.PROF_SPEAKINIG:
+				return 0.3f;
+			case Sound.FLY_SPEAKING:
+				return 0.3f;
 			default:
 				return 0;
 		}
