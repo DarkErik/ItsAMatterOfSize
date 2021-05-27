@@ -592,6 +592,7 @@ MonoBehaviour:
   input: {fileID: 5207162612699576678}
   onlyPerformOnce: 1
   conversation:
+    freezeTime: 1
     startNode:
       label: FligolinConv
       text:

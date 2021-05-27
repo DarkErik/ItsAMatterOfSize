@@ -15,6 +15,6 @@ public class LevelData : MonoBehaviour
 
 
 	public void Start() {
-		SoundManager.ChangeBackgrundMusic(backgroundMusic, 1, false);
+		if (backgroundMusic != Sound.NONE) SoundManager.ChangeBackgrundMusic(backgroundMusic, 1, false);
 	}
 }
