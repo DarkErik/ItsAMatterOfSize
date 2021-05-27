@@ -16,5 +16,7 @@ public class MainGameOverScreen : MonoBehaviour
     public void Respawn()
     {
         SceneTransition.LoadScene(respawn.name);
+
+        RespawnPoint.Respawn();
     }
 }
