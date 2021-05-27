@@ -124,5 +124,9 @@ public class Entity : MonoBehaviour
 		return hp;
 	}
 
+	public int GetMaxHp() {
+		return maxHp;
+	}
+
 }
 
