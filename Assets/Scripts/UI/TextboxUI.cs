@@ -102,7 +102,7 @@ public class TextboxUI : MonoBehaviour
 		for(int i = 0; i < msg.Length; i++) {
 			guiTxt.text = msg.Substring(0, i + 1);
 
-			if (sound != Sound.NONE && msg[i] != ' ') SoundManager.PlaySound(sound, true);
+			if (sound != Sound.NONE && char.IsLetterOrDigit(msg[i])) SoundManager.PlaySound(sound, true);
 
 			yield return new WaitForSeconds(delay);
 			if (Input.GetButtonDown("Jump")) {

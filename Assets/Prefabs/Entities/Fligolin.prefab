@@ -597,7 +597,7 @@ MonoBehaviour:
       text:
       - Conversation
       answers: []
-    speakingSound: 0
+    speakingSound: 10
 --- !u!114 &5207162612699576680
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -429,7 +429,7 @@ MonoBehaviour:
       - '*Klong*'
       - "*Die Labort\xFCr f\xE4llt ins schloss*"
       answers: []
-    speakingSound: 0
+    speakingSound: 9
 --- !u!114 &813038861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
       - hahahaha *hust* *hust*
       - 'Wie auch immer: Es wir zeit!'
       answers: []
-    speakingSound: 0
+    speakingSound: 9
 --- !u!114 &813038864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ MonoBehaviour:
           - nun ja,
           - "meiner wahren Gr\xF6\xDFe verhelfen!"
           answers: []
-    speakingSound: 0
+    speakingSound: 9
 --- !u!114 &813038875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
       - "*Wird er jemals wieder seine einstige gr\xF6\xDFe erreichen?*"
       - '*Dies steht in den Sternen geschrieben*'
       answers: []
-    speakingSound: 0
+    speakingSound: 10
 --- !u!114 &813038886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +994,7 @@ MonoBehaviour:
       - '*SUMM* Hu was ist den dass?'
       - AHHH Hilfe!
       answers: []
-    speakingSound: 0
+    speakingSound: 9
 --- !u!114 &813038890
 MonoBehaviour:
   m_ObjectHideFlags: 0

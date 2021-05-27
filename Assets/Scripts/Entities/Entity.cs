@@ -58,7 +58,10 @@ public class Entity : MonoBehaviour
 			Kill();
 		} else {
 			if (knockbackResistance < 1) {
-				if (IsPlayer()) PlayerControler.Shutdown(0.2f);
+				if (IsPlayer()) {
+					SoundManager.PlaySound(Sound.PLAYER_HURT, true);
+					PlayerControler.Shutdown(0.2f);
+				}
 
 				rb.velocity = knockback * (1 - knockbackResistance);
 			}

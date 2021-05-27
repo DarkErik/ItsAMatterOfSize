@@ -5376,7 +5376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 6278930932379424467, guid: 336f5a5cfca7d7948a79a6bcd1fcd68f, type: 3}
   magazineSize: 10
-  reloadTime: 5
+  reloadTime: 1
   shotsPerSecound: 5
   shotOrigin: {fileID: 7493675183027809172}
   isEnemy: 0
