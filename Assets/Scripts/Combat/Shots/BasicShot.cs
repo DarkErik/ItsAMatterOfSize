@@ -73,6 +73,7 @@ public class BasicShot : MonoBehaviour
 	/// Destroys this shot!
 	/// </summary>
 	public virtual void Kill() {
+		SoundManager.PlaySound(Sound.SHOT_HIT, true);
 		foreach(ParticleSystem ps in GetComponentsInChildren<ParticleSystem>()) {
 			ps.transform.SetParent(null);
 			ParticleSystem.EmissionModule em = ps.emission;

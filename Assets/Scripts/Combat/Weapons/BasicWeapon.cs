@@ -26,10 +26,12 @@ public class BasicWeapon : MonoBehaviour
 
 	public void Fire(float angleDEG) {
 		if (canShoot()) {
+			SoundManager.PlaySound(Sound.SHOT, true);
 			createBullet(angleDEG);
 			nextTimeShot = Time.time + 1 / shotsPerSecound;
 			currentAmmunition--;
 			if (currentAmmunition <= 0) {
+				if (gameObject == PlayerControler.instance.gameObject) SoundManager.PlaySound(Sound.RELOAD, false);
 				reloadTimestamp = Time.time + reloadTime;
 			}
 		}
@@ -87,6 +89,7 @@ public class BasicWeapon : MonoBehaviour
 	}
 
 	public void ForceReload() {
+		if (gameObject == PlayerControler.instance.gameObject) SoundManager.PlaySound(Sound.RELOAD, false);
 		reloadTimestamp = Time.time + reloadTime;
 	}
 }
