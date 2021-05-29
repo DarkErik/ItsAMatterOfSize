@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour {
 	private float startTime = 0;
 	private System.Action<int> onReachFocusPoint;
 
-	private bool takeControl = true;
+	private bool takeControl = false;
 
 	private void Awake() {
 		instance = this;
@@ -56,6 +56,7 @@ public class CameraController : MonoBehaviour {
 				currentFocusIndex++;
 				if (currentFocusIndex >= focusPoints.Length) {
 					takeControl = false;
+					VirtualCameraController.instance.SetFollow(PlayerControler.instance.transform);
 					Util.WakeWholePlayerUp();
 				}
 			}
@@ -68,6 +69,7 @@ public class CameraController : MonoBehaviour {
 		this.focusTime = focusTime;
 		this.onReachFocusPoint = onReachFocusPoint;
 
+		VirtualCameraController.instance.SetFollow(attationPoint);
 		startPos = transform.position;
 		startTime = Time.unscaledTime;
 		takeControl = true;

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainGameOverScreen : MonoBehaviour
 {
     [SerializeField] private SceneObj mainMenu;
-    [SerializeField] private SceneObj respawn;
 
     public void LoadMainMenu()
     {
@@ -15,8 +14,8 @@ public class MainGameOverScreen : MonoBehaviour
 
     public void Respawn()
     {
-        SceneTransition.LoadScene(respawn.name);
-
+		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("GameOver");
+		Time.timeScale = 1f;
         RespawnPoint.Respawn();
     }
 }
