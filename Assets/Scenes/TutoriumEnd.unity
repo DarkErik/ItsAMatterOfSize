@@ -56688,6 +56688,14 @@ PrefabInstance:
       propertyPath: dir
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 11400000, guid: 9858f00be48783c4882444852b80d0e1, type: 2}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: destinationExitName
+      value: ExitBottom
+      objectReference: {fileID: 0}
     - target: {fileID: 2649171095893063967, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
       propertyPath: m_Name
       value: ExitTop

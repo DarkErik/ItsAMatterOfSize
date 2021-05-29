@@ -114,7 +114,7 @@ public class PlayerControler : MonoBehaviour
 	private string horizontalMovementAxis = "Horizontal";
 	private string verticalMovementAxis = "Vertical";
 
-	[HideInInspector] public bool dashUnlocked = false;
+	public bool dashUnlocked = false;
 
 
 	private void Awake() {
