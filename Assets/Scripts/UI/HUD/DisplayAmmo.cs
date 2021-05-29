@@ -6,7 +6,8 @@ using TMPro;
 public class DisplayAmmo : MonoBehaviour
 {
     private int maxAmmo = 25;
-    private int currentAmmo;  
+    private int currentAmmo;
+    private bool isReloading;
 
     private BasicWeapon playerWeapon;
     public TMP_Text text;
@@ -18,6 +19,7 @@ public class DisplayAmmo : MonoBehaviour
 
         maxAmmo = playerWeapon.getMagazineSize();
         currentAmmo = maxAmmo;
+        isReloading = false;
 
         text.SetText(currentAmmo + "/" + maxAmmo);
     }
@@ -37,6 +39,22 @@ public class DisplayAmmo : MonoBehaviour
             currentAmmo = playerWeapon.getCurrentAmmunition();
 
             text.SetText(currentAmmo + "/" + maxAmmo);
+        }
+
+        //Change color of Text
+        if (isReloading != playerWeapon.IsReloading()) 
+        {
+            Debug.Log("Change Color");
+            if (playerWeapon.IsReloading())
+            {
+                text.color = Color.grey;
+                isReloading = true;
+            }
+            else 
+            {
+                text.color = Color.white;
+                isReloading = false;
+            }            
         }
     }
 }
