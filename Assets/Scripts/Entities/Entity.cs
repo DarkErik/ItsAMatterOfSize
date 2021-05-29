@@ -52,10 +52,11 @@ public class Entity : MonoBehaviour
 	/// </summary>
 	/// <param name="damage"></param>
 	/// <param name="knockback"></param>
-	public void Damage(int damage, Vector3 knockback) {
+	public bool Damage(int damage, Vector3 knockback) {
 		hp -= damage;
 		if (hp <= 0) {
 			Kill();
+			return true;
 		} else {
 			if (knockbackResistance < 1) {
 				if (IsPlayer()) {
@@ -65,6 +66,7 @@ public class Entity : MonoBehaviour
 
 				rb.velocity = knockback * (1 - knockbackResistance);
 			}
+			return false;
 		}
 	}
 
@@ -89,6 +91,11 @@ public class Entity : MonoBehaviour
 	/// USE THIS METHOD, NOT DESTROY! U FOOL
 	/// </summary>
 	public virtual void Kill() {
+		if (PlayerControler.instance.gameObject == this.gameObject) {
+			Time.timeScale = 0;
+			UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver", UnityEngine.SceneManagement.LoadSceneMode.Additive);
+		}
+
 		Destroy(this.gameObject);
 	}
 	
@@ -100,7 +107,7 @@ public class Entity : MonoBehaviour
 	/// <returns></returns>
 	public Vector3 GetKnockbackOutOfPosition(GameObject attacker, float knockbackStrenght) {
 		Vector3 dir = (this.transform.position - attacker.transform.position).normalized * knockbackStrenght;
-		if (dir.y < 13) dir.y += 13;
+		//if (dir.y < 13) dir.y += 13;
 		return dir ;
 	}
 

@@ -114,6 +114,9 @@ public class PlayerControler : MonoBehaviour
 	private string horizontalMovementAxis = "Horizontal";
 	private string verticalMovementAxis = "Vertical";
 
+	public bool dashUnlocked = false;
+
+
 	private void Awake() {
 		instance = this;
 		body = GetComponent<Rigidbody2D>();
@@ -150,7 +153,7 @@ public class PlayerControler : MonoBehaviour
 	}
 
 	private void HandleDashing() {
-		if (dashPressed && !isDashing && canDash) { // Start Dash
+		if (dashPressed && !isDashing && canDash && dashUnlocked) { // Start Dash
 			dashEndTime = Time.time + dashDuration;
 			isDashing = true;
 			canDash = false;

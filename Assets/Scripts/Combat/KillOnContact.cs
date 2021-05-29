@@ -21,8 +21,14 @@ public class KillOnContact : MonoBehaviour
 
 	private IEnumerator RespawnAfterSecond() {
 		yield return new WaitForSecondsRealtime(1f);
-		PlayerControler.instance.gameObject.GetComponent<Entity>().Damage(1, default);
+		Entity ent = PlayerControler.instance.gameObject.GetComponent<Entity>();
+		if(ent.gameObject == PlayerControler.instance.gameObject) {
+			
+			if (!ent.Damage(1, default)) {
+				RespawnPoint.Respawn();
+			}
+		}
 		Time.timeScale = 1f;
-		RespawnPoint.Respawn();
+		
 	}
 }

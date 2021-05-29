@@ -33,10 +33,18 @@ public class PlayerWeaponController : MonoBehaviour
     }
 
     private Vector2 getFireDirection() {
-        Vector3 mousePos = Input.mousePosition;
+//        Vector3 mousePos = Input.mousePosition;
 
-        Vector2 direcVector = new Vector2(mousePos.x - Camera.main.scaledPixelWidth / 2, mousePos.y - Camera.main.scaledPixelHeight / 2);
 
-        return direcVector;
+		Vector2 direcVector = PlayerControler.instance.transform.position - GetWorldPositionOnPlane(Input.mousePosition, 0);
+
+		return -direcVector;
     }
+	public Vector3 GetWorldPositionOnPlane(Vector3 screenPosition, float z) {
+		Ray ray = CameraController.instance.cam.ScreenPointToRay(screenPosition);
+		Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, z));
+		float distance;
+		xy.Raycast(ray, out distance);
+		return ray.GetPoint(distance);
+	}
 }

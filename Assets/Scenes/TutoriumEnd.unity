@@ -52183,6 +52183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6587061081482435012, guid: 3292146789d033f438664125ffd513ad, type: 3}
+      propertyPath: maxHp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3292146789d033f438664125ffd513ad, type: 3}
 --- !u!1 &1007649930
@@ -53026,9 +53030,13 @@ PrefabInstance:
       propertyPath: scene
       value: 
       objectReference: {fileID: 11400000, guid: 5356529073b824444bc144de991632f9, type: 2}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: destinationExitName
+      value: ExitRight
+      objectReference: {fileID: 0}
     - target: {fileID: 2649171095893063967, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
       propertyPath: m_Name
-      value: ExitRight
+      value: ExitLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
@@ -55605,9 +55613,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 11400000, guid: f9a1dce680fbe9a4b98487958a20a523, type: 2}
     - target: {fileID: 2649171095893063967, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
       propertyPath: m_Name
-      value: Exit (1)
+      value: ExitRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
@@ -56676,9 +56688,17 @@ PrefabInstance:
       propertyPath: dir
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 11400000, guid: 9858f00be48783c4882444852b80d0e1, type: 2}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: destinationExitName
+      value: ExitBottom
+      objectReference: {fileID: 0}
     - target: {fileID: 2649171095893063967, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
       propertyPath: m_Name
-      value: Exit
+      value: ExitTop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}

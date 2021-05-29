@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Flying : BasicMovement {
+
 	[SerializeField] private float speed;
 	[SerializeField] private float minDistanceFromPlayer = 4;
+	[SerializeField] private float minAliveDistance = 15;
 	[SerializeField] private string useToTriggerBoolInstead = "";
 	[SerializeField] private Transform rotationBase;
 
@@ -21,6 +23,8 @@ public class Flying : BasicMovement {
 
 	private void FixedUpdate() {
 		Vector3 toPlayer = PlayerControler.instance.transform.position - transform.position;
+
+
 		if (toPlayer.sqrMagnitude > minDistanceFromPlayer * minDistanceFromPlayer) {
 			if (useToTriggerBoolInstead != "") anim.SetBool(useToTriggerBoolInstead, false);
 			toPlayer.Normalize();
@@ -41,6 +45,8 @@ public class Flying : BasicMovement {
 
 	private void OnDrawGizmosSelected() {
 		Gizmos.DrawWireSphere(transform.position, minDistanceFromPlayer);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position, minAliveDistance);
 	}
 
 	public void Flip() {

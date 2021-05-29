@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  speed: 10
+  speed: 20
   knockbackStrenght: 14.05
 --- !u!58 &6278930932379424471
 CircleCollider2D:
