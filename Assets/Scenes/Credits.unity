@@ -180,39 +180,34 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dyasty
+  m_text: 'Maurice
 
-    Theniyn
+    Jannis
 
+    Mara
 
-    Calalaera
+    Erik
 
-    Raduem
-
-
-    Senislle
+    Michael
 
 
 
-    Filan
-
-    Quithe
-
-    Harelaera
-
-
-    Phyastynu
-
-    Milo
-
-
-    Ithedeu
+    Pero
 
 
 
-    Wyanariacal
 
-    Daena'
+
+
+
+    MusicFox.com
+
+    Zapsplat.com
+
+
+    itch.io
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -794,8 +789,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: THANK YOU FOR PLAYING
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5ba126ba547118c478eedf72748f6512, type: 2}
-  m_sharedMaterial: {fileID: 6459914218534915337, guid: 5ba126ba547118c478eedf72748f6512, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -986,8 +981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.78, y: 6.85}
-  m_SizeDelta: {x: 206.2074, y: 47.9107}
+  m_AnchoredPosition: {x: -0.78, y: 6.9339}
+  m_SizeDelta: {x: 225.3774, y: 56.6244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364126550
 MonoBehaviour:
@@ -1011,8 +1006,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CREDITS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5ba126ba547118c478eedf72748f6512, type: 2}
-  m_sharedMaterial: {fileID: 6459914218534915337, guid: 5ba126ba547118c478eedf72748f6512, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1317,8 +1312,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum \n\n\ndolor sit amet,\n\n\n consetetur\n\n\nsadipscing elitr,
-    \n\n\n\nsed diam\n\n\nnonumy eirmod\n\n\n tempor invidunt"
+  m_text: "Team \n\n\n\n\n\n\nSpecial Thanks\n\n\n\n\nExtern Assets\n\nBackground
+    Music\n\n\nMossy Assets\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
