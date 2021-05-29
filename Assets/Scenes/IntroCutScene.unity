@@ -428,7 +428,7 @@ MonoBehaviour:
       label: Conv1
       text:
       - '*Klong*'
-      - "*Die Labort\xFCr f\xE4llt ins schloss*"
+      - "*Die Labort\xFCr f\xE4llt ins Schloss*"
       answers: []
     speakingSound: 9
 --- !u!114 &813038861
@@ -482,14 +482,14 @@ MonoBehaviour:
       - Soo! Keine Zeit mehr verschwenden.
       - Fix den neuen Pyro-Oszillator festgeschraubt.
       - ...
-      - Uuuuund, Evoila!
+      - "Uuuuund, et voil\xE0!"
       - "Fertig ist das Prachtst\xFCck!"
-      - "Meine Rache wird unerm\xE4\xDFlich sein."
-      - "Dank des Maximator (TM) wird die Welt mir wortw\xF6rtlich zu F\xFC\xDFen
+      - Meine Rache wird unermesslich sein.
+      - "Dank des Maximators (TM) wird die Welt mir wortw\xF6rtlich zu F\xFC\xDFen
         liegen!"
       - Muhahahahahahahahahahahahahahahahahahahahahahahahahahahaha
       - hahahaha *hust* *hust*
-      - 'Wie auch immer: Es wir zeit!'
+      - 'Wie auch immer: Es wird Zeit!'
       answers: []
     speakingSound: 9
 --- !u!114 &813038864
@@ -682,48 +682,48 @@ MonoBehaviour:
     startNode:
       label: Conv3
       text:
-      - Alle Systeme Activ!
-      - Es ist Zeit zu Starten!
+      - Alle Systeme activ!
+      - Es ist Zeit zu starten!
       answers:
-      - answerText: Mir Schlottern die Knie
+      - answerText: Mir schlottern die Knie
         answerNode:
           label: 
           text:
           - Will ich das wirklich tun?
-          - "Es kann ja ganz sch\xF6n was Schief gehn!"
+          - "Es kann ja ganz sch\xF6n was schief gehn!"
           - "Ich k\xF6nnte mir wehtun..."
           - "Ich k\xF6nnte sterben!"
           - ...
           - Ich sollte es lieber lassen!
-          - Meine Rache und Wut ist ja auch schon quasi verraucht.
+          - Meine Rache und Wut sind ja auch schon quasi verraucht.
           - Mhmm...
           answers:
           - answerText: Jo, lass lieber bleiben
             answerNode:
               label: End
               text:
-              - Ja... Das ganze war Zeitverschwendung.
+              - Ja... Das Ganze war Zeitverschwendung.
               - Ich denke ich sollte sinvolle Sachen tun.
               - "Alten Leuten \xFCber die Stra\xDFe helfen."
-              - Payback punkte sammeln.
+              - Payback Punkte sammeln.
               - Gegen Weltfriden protestieren.
               - "Das h\xF6hrt sich doch viel besser an."
-              - "*Die Labort\xFCr f\xE4llt mit einem Lautem Rums in Schloss*"
+              - "*Die Labort\xFCr f\xE4llt mit einem lautem Rums ins Schloss*"
               answers: []
           - answerText: Nichts da!
             answerNode:
               label: 
               text:
-              - "Der gesetzlich vorgeschriebende Feuerl\xF6scher"
+              - "Der gesetzlich vorgeschriebene Feuerl\xF6scher"
               - Ist schon bezahlt.
-              - "Lohnt sich nicht, jetzt auf zuh\xF6hren!"
+              - "Lohnt sich nicht, jetzt aufzuh\xF6ren!"
               answers:
               - answerText: 
                 answerNode:
-                  label: Jump Conv3
+                  label: Jump Continue
                   text: []
                   answers: []
-      - answerText: "Kein zu\xFCck mehr!"
+      - answerText: "Kein zur\xFCck mehr!"
         answerNode:
           label: Continue
           text:
@@ -926,9 +926,9 @@ MonoBehaviour:
     startNode:
       label: Conv5
       text:
-      - "*Eine Massive Fliege entf\xFChrt, den Professor*"
+      - "*Eine massive Fliege entf\xFChrt den Professor*"
       - "*Schon w\xE4hrend des Fluges f\xE4ngt seine Haut an abzubr\xF6seln*"
-      - "*Wird er jemals wieder seine einstige gr\xF6\xDFe erreichen?*"
+      - "*Wird er jemals wieder seine einstige Gr\xF6\xDFe erreichen?*"
       - '*Dies steht in den Sternen geschrieben*'
       answers: []
     speakingSound: 10
@@ -996,7 +996,7 @@ MonoBehaviour:
       - "Verdammt! Zeit den Prozess r\xFCckg\xE4ngig zu machen."
       - "Da stand was davon, dass die Haut abfallen k\xF6nnte,"
       - "Wenn man zu lange seine Gr\xF6\xDFe ver\xE4ndert."
-      - '*SUMM* Hu was ist den dass?'
+      - '*SUMM* Hu was ist denn dass?'
       - AHHH Hilfe!
       answers: []
     speakingSound: 9

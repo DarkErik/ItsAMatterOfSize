@@ -19,6 +19,13 @@ public class PlayerWeaponController : MonoBehaviour
         {
             basicWeapon.Fire(getFireDirection());
         }
+        else if (basicWeapon != null && Input.GetButton("Reload")) 
+        {
+            if (!basicWeapon.IsReloading() && basicWeapon.getMagazineSize() != basicWeapon.getCurrentAmmunition()) 
+            {
+                basicWeapon.ForceReload();
+            } 
+        }
         else {
             //Falls ein Fehler bei Awake passieren sollte
             basicWeapon = GetComponent<BasicWeapon>();
