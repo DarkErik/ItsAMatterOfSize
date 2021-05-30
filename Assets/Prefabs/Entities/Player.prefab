@@ -5288,6 +5288,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3246011220221452426}
   wallCheck: {fileID: 3246011220818079692}
   partikelSystem: {fileID: 3246011219825364333}
+  dashUnlocked: 0
 --- !u!114 &6587061081482435012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5300,7 +5301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60bd4664676879439813216718e41a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10000
+  maxHp: 10
   isEnemy: 0
   touchDamage: 0
   touchKnockback: 0

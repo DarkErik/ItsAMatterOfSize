@@ -17,7 +17,9 @@ public enum Sound {
 	SHOT_HIT,
 	RELOAD,
 	PROF_SPEAKINIG,
-	FLY_SPEAKING
+	FLY_SPEAKING,
+	MENU_MUSIC,
+	BATTLE_MUSIC
 }
 
 public static class SoundUtility {

@@ -17,6 +17,10 @@ public class RespawnPoint : MonoBehaviour
 	}
 
 	public static void Respawn() {
+
+		foreach (BasicShot go in GameObject.FindObjectsOfType<BasicShot>())
+			Destroy(go.gameObject);
+
 		Exit.SpawnNewPlayer(lastRespawnPoint.transform.position, lastPlayerData);
 	}
 }

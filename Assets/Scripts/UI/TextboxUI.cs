@@ -57,7 +57,8 @@ public class TextboxUI : MonoBehaviour
 
 			foreach (string txt in currentNode.text) {
 				finishedCurrentMsgPrinting = false;
-				Coroutine c = StartCoroutine(PrintMsg(txt, 0.01f, conversation.speakingSound));
+				
+				Coroutine c = StartCoroutine(PrintMsg(txt, 0.01f, txt[0] == '*' ? conversation.speakingSound2 : conversation.speakingSound));
 				yield return new WaitUntil(() => finishedCurrentMsgPrinting);
 				yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
 				yield return new WaitUntil(() => Input.GetButtonUp("Jump"));
@@ -138,6 +139,7 @@ public class Conversation {
 	public bool freezeTime = false;
 	public ConversationNode startNode;
 	public Sound speakingSound = Sound.NONE;
+	public Sound speakingSound2 = Sound.NONE;
 
 	[System.Serializable]
 	public class ConversationNode {
