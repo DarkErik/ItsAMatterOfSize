@@ -569,7 +569,7 @@ MonoBehaviour:
   touchDamage: 1
   touchKnockback: 20
   invincibilityTimeAfterHit: 0
-  knockbackResistance: 0.5
+  knockbackResistance: 0.569
 --- !u!114 &7973855333806406271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,6 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   minDistanceFromPlayer: 6.94
+  minAliveDistance: 15
   useToTriggerBoolInstead: Attack
   rotationBase: {fileID: 7973855333806406270}
 --- !u!1 &7973855334284271725

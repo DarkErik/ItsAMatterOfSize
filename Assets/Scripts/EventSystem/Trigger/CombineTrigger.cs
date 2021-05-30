@@ -24,13 +24,13 @@ public class CombineTrigger : Trigger
 			SetState(state);
 		else { 
 			if ((state != currentState.active && timeStamps.Count % 2 == 0) || (state == currentState.active && timeStamps.Count % 2 == 1)) {
-				timeStamps.AddLast(Time.time + delayed);
+				timeStamps.AddLast(Time.realtimeSinceStartup + delayed);
 			}
 			bool again = false;
 			do {
 				again = false;
 				foreach (float stamp in timeStamps) {
-					if (Time.time >= stamp) {
+					if (Time.realtimeSinceStartup >= stamp) {
 						SetState(!GetTriggerState().active);
 						again = true;
 						timeStamps.Remove(stamp);

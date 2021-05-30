@@ -18,7 +18,10 @@ public class MainMenu : MonoBehaviour
 		SceneTransition.LoadScene(credits.name);
     }
 
-    public void QuitGame()
+	public void AdjustVolume(System.Single newVolume) {
+		AudioListener.volume = newVolume;
+	}
+	public void QuitGame()
     {
         Debug.Log("Quit Game!");
         Application.Quit();

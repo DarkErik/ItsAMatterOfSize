@@ -45,7 +45,7 @@ public class Flying : BasicMovement {
 
 	private void OnDrawGizmosSelected() {
 		Gizmos.DrawWireSphere(transform.position, minDistanceFromPlayer);
-		Gizmos.color = Color.yellow;
+		Gizmos.color = Color.yellow;	
 		Gizmos.DrawWireSphere(transform.position, minAliveDistance);
 	}
 

@@ -85,8 +85,16 @@ MonoBehaviour:
     volume: 0.842
   - type: 10
     clips:
-    - {fileID: 8300000, guid: 5ad4c80b8b240a648b914261fcabf5fa, type: 3}
+    - {fileID: 8300000, guid: 10b3a48b47fe41a4baa6add930bfa73c, type: 3}
     volume: 0.842
+  - type: 11
+    clips:
+    - {fileID: 8300000, guid: 253b04f2592f1fa4086ae829dd6282f2, type: 3}
+    volume: 0.613
+  - type: 12
+    clips:
+    - {fileID: 8300000, guid: 8a86fc9d4071490488f55d13f5656cd7, type: 3}
+    volume: 0.404
   audioSourceParent: {fileID: 6468973846354584495}
 --- !u!1 &6468973846354584492
 GameObject:
