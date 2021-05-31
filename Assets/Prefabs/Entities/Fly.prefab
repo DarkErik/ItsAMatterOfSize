@@ -124,6 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   minDistanceFromPlayer: 7.04
+  minAliveDistance: 15
+  useToTriggerBoolInstead: 
   rotationBase: {fileID: 4850985064453701202}
 --- !u!1 &4850985063013751181
 GameObject:
@@ -510,7 +512,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -7268135333770365264, guid: 02d3a921e75abae48a8f7daefff6d487, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.43120328, b: 0.43120328, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

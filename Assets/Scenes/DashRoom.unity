@@ -34260,13 +34260,37 @@ PrefabInstance:
       propertyPath: gameObjects.Array.data[4]
       value: 
       objectReference: {fileID: 1513240667}
+    - target: {fileID: 3438547617638493080, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438547617638493080, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: m_Size.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438547617638493080, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: m_Offset.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438547617638493080, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: m_Offset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3520465433236712639, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
       propertyPath: onlyPerformOnce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3520465433236712639, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: triggeredTriggerName
+      value: open
+      objectReference: {fileID: 0}
     - target: {fileID: 5641718670039127973, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
       propertyPath: onlyPerformOnce
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5641718670039127973, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
+      propertyPath: triggeredTriggerName
+      value: close
       objectReference: {fileID: 0}
     - target: {fileID: 8210956451550957486, guid: 19ce5f48e74fde5458ee7e2fe1c99514, type: 3}
       propertyPath: cameraFocus

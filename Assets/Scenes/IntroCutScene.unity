@@ -427,10 +427,11 @@ MonoBehaviour:
     startNode:
       label: Conv1
       text:
-      - '*Klong*'
+      - '*Klong* [SPACE]'
       - "*Die Labort\xFCr f\xE4llt ins Schloss*"
       answers: []
     speakingSound: 9
+    speakingSound2: 0
 --- !u!114 &813038861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +493,7 @@ MonoBehaviour:
       - 'Wie auch immer: Es wird Zeit!'
       answers: []
     speakingSound: 9
+    speakingSound2: 0
 --- !u!114 &813038864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +736,7 @@ MonoBehaviour:
           - "meiner wahren Gr\xF6\xDFe verhelfen!"
           answers: []
     speakingSound: 9
+    speakingSound2: 0
 --- !u!114 &813038875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +935,7 @@ MonoBehaviour:
       - '*Dies steht in den Sternen geschrieben*'
       answers: []
     speakingSound: 10
+    speakingSound2: 0
 --- !u!114 &813038886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,6 +1004,7 @@ MonoBehaviour:
       - AHHH Hilfe!
       answers: []
     speakingSound: 9
+    speakingSound2: 0
 --- !u!114 &813038890
 MonoBehaviour:
   m_ObjectHideFlags: 0

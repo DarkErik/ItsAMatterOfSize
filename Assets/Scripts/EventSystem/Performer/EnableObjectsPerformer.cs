@@ -13,7 +13,7 @@ public class EnableObjectsPerformer : Performer
 	private bool enableObjects = true;
 
 	protected override void Perform(TriggerState state) {
-		if (state.just) {
+		if (true) {
 			if (state.active == !invertBehaivior) {
 				if (invertBehaivior && !invertBehaiviorOnRelease) return;
 
