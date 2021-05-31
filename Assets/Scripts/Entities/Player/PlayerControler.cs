@@ -140,6 +140,12 @@ public class PlayerControler : MonoBehaviour
 		CheckCanJump();
 		CheckIfWallSliding();
 		UpdatePartikleSystem();
+		BUGGED_RESET();
+	}
+
+	private void BUGGED_RESET() {
+		if (Input.GetKeyDown(KeyCode.Escape) || transform.position.z < -50)
+			RespawnPoint.Respawn();
 	}
 
 	public void FixedUpdate() {

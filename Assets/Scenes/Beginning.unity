@@ -33640,7 +33640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
       propertyPath: conversation.startNode.text.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
       propertyPath: conversation.startNode.text.Array.data[0]
@@ -33665,6 +33665,18 @@ PrefabInstance:
     - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
       propertyPath: conversation.startNode.text.Array.data[5]
       value: Egal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
+      propertyPath: conversation.startNode.text.Array.data[6]
+      value: Btw. falls du mal in der Wand stecken bleiben solltest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
+      propertyPath: conversation.startNode.text.Array.data[7]
+      value: Its not a bug. Its a feature!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207162612699576681, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
+      propertyPath: conversation.startNode.text.Array.data[8]
+      value: "Dr\xFCck einfach [ESC]"
       objectReference: {fileID: 0}
     - target: {fileID: 5207162612699576682, guid: 200a4b0d60fcfef4697c26266cb452b7, type: 3}
       propertyPath: m_Name

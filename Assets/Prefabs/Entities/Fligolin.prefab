@@ -96,7 +96,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 50db97b9728c5954d9b03d75f1247f23, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -558,7 +558,7 @@ MonoBehaviour:
   onlyPerformOnce: 1
   anim: {fileID: 5207162612699576674}
   justTriggeredTriggerName: Enter
-  triggeredTriggerName: 
+  triggeredTriggerName: Enter
   justReleasedTriggerName: 
   releasedTriggerName: 
 --- !u!114 &5207162612699576678
@@ -630,7 +630,7 @@ MonoBehaviour:
   onlyPerformOnce: 1
   anim: {fileID: 5207162612699576674}
   justTriggeredTriggerName: Exit
-  triggeredTriggerName: 
+  triggeredTriggerName: Exit
   justReleasedTriggerName: 
   releasedTriggerName: 
 --- !u!1 &5207162612702230622

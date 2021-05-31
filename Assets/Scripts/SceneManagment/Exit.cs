@@ -44,7 +44,9 @@ public class Exit : MonoBehaviour {
 	}
 
 	public static void SpawnNewPlayer(Vector3 spawnPosition, PlayerData data) {
+		
 		Destroy(GameObject.Find("Player"));
+		Destroy(GameObject.Find("Player(Clone)"));
 		GameObject player = Instantiate(Factory.instance.playerPrefab, spawnPosition, default);
 		data.ApplyPlayerData(player);
 		VirtualCameraController.instance.SetFollow(player.transform);
