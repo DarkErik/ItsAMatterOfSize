@@ -9,6 +9,8 @@ public class MainGameOverScreen : MonoBehaviour
 
     public void LoadMainMenu()
     {
+		Time.timeScale = 1f;
+		RespawnPoint.lastRespawnPoint = null;
         SceneTransition.LoadScene(mainMenu.name);
     }
 
@@ -17,5 +19,6 @@ public class MainGameOverScreen : MonoBehaviour
 		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("GameOver");
 		Time.timeScale = 1f;
         RespawnPoint.Respawn();
+		PlayerControler.instance.GetComponent<Entity>().SetHp(PlayerControler.instance.GetComponent<Entity>().GetMaxHp());
     }
 }
