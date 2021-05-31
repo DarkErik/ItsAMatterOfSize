@@ -63294,6 +63294,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 22.16
       objectReference: {fileID: 0}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 11400000, guid: 22aea30a76826884ea7515797be09942, type: 2}
+    - target: {fileID: 2649171095893063965, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
+      propertyPath: destinationExitName
+      value: ExitLeft
+      objectReference: {fileID: 0}
     - target: {fileID: 2649171095893063967, guid: 9f2cf835ca439ed4facab0dff325220c, type: 3}
       propertyPath: m_Name
       value: ExitRight
